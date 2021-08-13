@@ -122,7 +122,7 @@ module.exports = {
   ],
   plugins: [
     [ require.resolve('docusaurus-lunr-search'), {
-      
+      languages:['zh','en'],
       indexBaseUrl: true // language codes
     }],
    
