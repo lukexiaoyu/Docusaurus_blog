@@ -3,33 +3,18 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
-  title: 'My Site',
+  title: 'KlPalace', 
   tagline: 'Dinosaurs are cool',
   url: 'https://your-docusaurus-test-site.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'lukexiaoyu', // Usually your GitHub org/user name.
+  projectName: 'Docusaurus_blog', // Usually your repo name.
   themeConfig: {
-    algolia: {
-      apiKey: 'e446be86f8b1105df370f59551fbfe89',
-      indexName: 'blog',
-
-      // Optional: see doc section below
-      contextualSearch: true,
-
-      // Optional: see doc section below
-      appId: 'FW672MMM5S',
-
-      // Optional: Algolia search parameters
-      searchParameters: {},
-
-      //... other Algolia params
-    },
     navbar: {
-      title: 'My Site',
+      title: 'KL  ',
       logo: {
         alt: 'My Site Logo',
         src: 'img/logo.svg',
@@ -39,12 +24,24 @@ module.exports = {
           type: 'doc',
           docId: 'intro',
           position: 'left',
-          label: 'Tutorial',
+          label: 'HTML5',
         },
+
+      
+        {to: '/angular/index', label: 'Angular', position: 'left'},
+        {to: '/django/index', label: 'Django', position: 'left'},
         {to: '/blog', label: 'Blog', position: 'left'},
+       
+        
+        
         {
-          href: 'https://github.com/facebook/docusaurus',
+          href: 'https://github.com/lukexiaoyu/Docusaurus_blog',
           label: 'GitHub',
+          position: 'right',
+        },
+        {
+          href: 'https://space.bilibili.com/79985728',
+          label: 'BiliBili',
           position: 'right',
         },
       ],
@@ -56,8 +53,8 @@ module.exports = {
           title: 'Docs',
           items: [
             {
-              label: 'Tutorial',
-              to: '/docs/intro',
+              label: '百度',
+              href: 'https://www.baidu.com',
             },
           ],
         },
@@ -104,21 +101,56 @@ module.exports = {
       '@docusaurus/preset-classic',
       {
         docs: {
+          // docId: 'intro',
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/',
+            'https://github.com/lukexiaoyu/Docusaurus_blog/edit/main/',
         },
+       
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/blog/',
+            'https://github.com/lukexiaoyu/Docusaurus_blog/edit/main/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
       },
+    ],
+  ],
+  plugins: [
+    require.resolve('@cmfcmf/docusaurus-search-local'),
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'angular',
+        path: 'angular',
+        routeBasePath: 'angular',
+        sidebarPath: require.resolve('./sidebars.js'),
+        editUrl:
+            'https://github.com/lukexiaoyu/Docusaurus_blog/edit/main/',
+        
+        
+        // ... other options
+      },
+      
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'django',
+        path: 'django',
+        routeBasePath: 'django',
+        sidebarPath: require.resolve('./sidebars.js'),
+        editUrl:
+            'https://github.com/lukexiaoyu/Docusaurus_blog/edit/main/',
+        
+        
+        // ... other options
+      },
+      
     ],
   ],
 };
